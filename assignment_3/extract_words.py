@@ -63,7 +63,7 @@ def main():
     freq = getWordsFreq(word_dict)
     frequency = open("wordfrequency.txt", 'w')
     # sort the dictionary based on values, increase in frequency
-    for word in sorted(freq, key = freq.get):
+    for word in sorted(freq):
         # write according to frequency
         frequency.write(str(word) + ':' + str(freq[word]) + '\n')
 
