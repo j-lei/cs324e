@@ -12,14 +12,39 @@ void setup() {
 
 void draw() {
   background(128);    // Sets the background to grey after every iteration of draw
-  String[] wordArray = loadStrings("unique_text.txt");    //  Creates an array from the uniquewords.txt file
+  String[] wordArray = loadStrings("uniquewords.txt");    //  Creates an array from the uniquewords.txt file
   ArrayList<String> wordList = new ArrayList<String>();    //  Creates a list
   for (int i = 0; i < wordArray.length; i++) {
     wordList.add(wordArray[i]);                            //  Propogates list with unique words from wordArray
   }
   Collections.shuffle(wordList);    //  Shuffles wordList
-  String wordString = String.join(", ", wordList);    //  Creates the string wordString from wordList
-  text(wordString, 0, 0, 700, 600);    //  Displays wordString starting at the top left of the screen and makes it fit to the 700 x 600 frame
+  
+  int x = 10;
+  int y = 30;
+  ArrayList<Integer> hexList = new ArrayList<Integer>();    //  Creates List of hex colors to be used
+  hexList.add(int(#000000));
+  hexList.add(int(#a70c0c));
+  hexList.add(int(#6d128d));
+  
+  int n = 0;
+  for (int i = 0; i < wordList.size(); i++) {    //  This loop iterates through my list of words and then prints them out one by one and avoids running over the edges
+    if (x > 450) {
+      y += 30;
+      x = 10;
+    }
+    String part = wordList.get(i);
+    fill(hexList.get(n));    //   Fills the word with a color from the hexList
+    text(part, x, y, 700, 600);
+    x += (textWidth(part) + 10);
+    if (n == 2) {
+      n = 0;
+    }
+    else {
+      n += 1;
+    }
+  
+  }
+  
   noLoop();    //  Stops draw() after one iteration
   }  
     
