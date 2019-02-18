@@ -23,11 +23,11 @@ void setup() {
   
   //iterate thru freqmap, find largest value, draw circles based on how large they are
   //compared to largest value
-  //TODO: area, not diameter, proportionate to commonness
   Integer maxFreq = Collections.max(freqMap.values());
   float x = canvas_height*0.25+50;
   float y = canvas_height/2;
   float increment = canvas_width/40;
+  //color will start at bright red-orange and fade to white for less common frequencies
   color c = color(255, 86, 25);
   colorMode(HSB, 360, 100, 100);
   
