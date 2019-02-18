@@ -28,6 +28,8 @@ void setup() {
   float x = canvas_height*0.25+50;
   float y = canvas_height/2;
   float increment = canvas_width/40;
+  color c = color(255, 86, 25);
+  colorMode(HSB, 360, 100, 100);
   
   //draw grids
   drawGridLines(180, x, increment, 630);
@@ -39,8 +41,9 @@ void setup() {
     print("maxFreq:", maxFreq, "\n");
     print("Ratio:", diameterRatio, "\n");
     
-    makeCircles(255, x, y, diameterRatio);
+    makeCircles(c, x, y, diameterRatio);
     
+    c = color(hue(c), saturation(c) - 10, brightness(c) + 10);
     x += increment;
     if(x > canvas_width - 20) {
       break;
@@ -67,7 +70,6 @@ public void makeCircles(color c, float x, float y, float ratio) {
 /** Given color to draw grid lines in, starting X position, grid incrememnt, and 
 y position of X axis, creates grid lines and axes + labels**/
 public void drawGridLines(color c, float startX, float inc, float y) {
-  fill(255);
   textSize(22);
   textAlign(CENTER);
   stroke(c);
