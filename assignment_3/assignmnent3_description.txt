@@ -1,0 +1,17 @@
+For the following assignment, we chose "Dracula" by Bram Stoker.
+
+1. extract_words.py - Junsung Lee - created a python script that parses through
+a plain text book, stripped each word of any punctuation using regular
+expression findall and extract all the words, all the unique words, and the
+frequency of words in the novel - Dracula.
+
+2. a3_novelvisualization and Worlde word cloud - Zachary Martinez - Created a
+Wordle word cloud with the allwords.txt and novel visualization word cloud
+with the uniquewords.txt. Implemented a spooky font that represents the theme of
+the book - Dracula, and chose the list of hex colors to use based on what I
+assumed to go well with the theme.
+
+
+3. a3_wordfrequency - Jennifer Lei - Drew circles with areas proportionate to
+the number of words with each frequency. Contains labeled x-axis gridline and
+description of what the circles represent.
