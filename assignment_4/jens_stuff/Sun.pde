@@ -1,22 +1,36 @@
 class Sun {
-  public float x;
-  public float y;
-  public float radius;
+  public float beginX;
+  public float beginY;
+  public float currentX;
+  public float currentY;
+  public float currentAngle = PI;    //starting position
+  public float diameter;
   public color sunColor;
   
-  //constructor overloads are all or nothing lol
+  //constructor overloads; all or nothing lol
   public Sun(){
   }
-  public Sun(float x, float y, float radius, color sunColor) {
-    this.x = x;
-    this.y = y;
-    this.radius = radius;
+  public Sun(float beginX, float beginY, float diameter, color sunColor) {
+    this.currentX = beginX;
+    this.currentY = beginY;
+    this.beginX = beginX;
+    this.beginY = beginY;
+    this.diameter = diameter;
     this.sunColor = sunColor;
   }
   
   public void display() {
-    fill(this.sunColor);
+    fill(sunColor);
     noStroke();
-    
+    ellipseMode(CENTER);
+    circle(currentX, currentY, diameter);
+  }
+  
+  //code adapted from https://www.openprocessing.org/sketch/106191
+  //moves sun in a circle lol
+  public void moveSun(float speed, float size) {
+    currentX = beginX + sin(currentAngle) * size;
+    currentY = beginY + cos(currentAngle) * size;
+    currentAngle += speed;
   }
 }
