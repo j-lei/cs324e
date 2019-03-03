@@ -8,7 +8,7 @@ void settings() {
 void setup() {
   PShape birdy = loadShape("Birdie.svg");
   bird1 = new Birds(-100, 200, 75, 75, 5, birdy);
-  PShape babybirdy = loadShape("Birdie2.svg");
+  PShape babybirdy = loadShape("Birdie.svg");
   bird2 = new Birds(0, 200, 25, 25, 0.25, babybirdy);
 }
 
