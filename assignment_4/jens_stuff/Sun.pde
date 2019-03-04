@@ -9,6 +9,7 @@ class Sun {
   public color spokeColor;
   public float spokeSize;
   public int numSpokes;
+  float angle = 0;
   
   //constructor overloads; all or nothing lol
   public Sun(){
@@ -36,19 +37,19 @@ class Sun {
   
   //code adapted from https://www.openprocessing.org/sketch/106191
   //moves sun in a circle lol
-  public void moveSun(float speed, float size) {
+  public void moveSun(float speed, float size, float spokeSpeed) {
     currentX = beginX + sin(currentAngle) * size;
     currentY = beginY + cos(currentAngle) * size;
     currentAngle += speed;
+    
+    moveSpokes(spokeSpeed);
   }
   
   public void displaySpokes() {
-    float angle = 0;
     float scale = (diameter/1.25) + spokeSize;
     float increment = (2*PI)/numSpokes;
     
     for (int i=0; i<numSpokes; i++) {
-      
       float x = currentX + sin(angle) * scale;
       float y = currentY + cos(angle) * scale;
       
@@ -62,5 +63,10 @@ class Sun {
       
       angle += increment;
     }
+  }
+  
+  public void moveSpokes(float spokeSpeed) {
+    angle += spokeSpeed;
+    displaySpokes();
   }
 }

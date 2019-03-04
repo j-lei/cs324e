@@ -11,5 +11,5 @@ void setup() {
 void draw() {
   background(blue);
   sun.display();
-  sun.moveSun(0.02, width/2);
+  sun.moveSun(0.015, width/2, 0.03);
 }
