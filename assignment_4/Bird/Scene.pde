@@ -43,6 +43,10 @@ void setup() {
 
 void draw() {
   background(137, 213, 255);
+  sun.display();
+  sun.moveSun(0.015, width/2, 0.03);
+  moon.display();
+  moon.moveSun(0.02, width/3, 0.05);
   noStroke();
   fill(#807e78);
   rect(width/2,height/2+250,900,300);
@@ -57,8 +61,4 @@ void draw() {
   wheel2.drive();
   bird1.animate();
   bird2.animateBaby(bird1);
-  sun.display();
-  sun.moveSun(0.015, width/2, 0.03);
-  moon.display();
-  moon.moveSun(0.02, width/3, 0.05);
 }
