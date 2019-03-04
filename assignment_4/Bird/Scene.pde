@@ -13,6 +13,9 @@ void setup() {
   bird1 = new Birds(-100, 200, 75, 75, 5, birdy);
   PShape babybirdy = loadShape("Birdie.svg");
   bird2 = new Birds(0, 200, 25, 25, 0.15, babybirdy);
+  //Song is Excursion by Dylan Sitts
+  file = new SoundFile(this, "Excursion.mp3");
+  file.play();
 }
 
 void draw() {
