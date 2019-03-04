@@ -9,7 +9,7 @@ class Sun {
   public color spokeColor;
   public float spokeSize;
   public int numSpokes;
-  float angle = 0;
+  float spokeAngle = 0;
   
   //constructor overloads; all or nothing lol
   public Sun(){
@@ -41,7 +41,9 @@ class Sun {
     currentX = beginX + sin(currentAngle) * size;
     currentY = beginY + cos(currentAngle) * size;
     currentAngle += speed;
-    
+    if (currentAngle >= TWO_PI) {
+        currentAngle -= TWO_PI;
+    }
     moveSpokes(spokeSpeed);
   }
   
@@ -50,22 +52,25 @@ class Sun {
     float increment = (2*PI)/numSpokes;
     
     for (int i=0; i<numSpokes; i++) {
-      float x = currentX + sin(angle) * scale;
-      float y = currentY + cos(angle) * scale;
+      float x = currentX + sin(spokeAngle) * scale;
+      float y = currentY + cos(spokeAngle) * scale;
       
       pushMatrix();
       translate(x, y);
-      rotate(PI-angle);
+      rotate(PI-spokeAngle);
       fill(spokeColor);
       noStroke();
       triangle(0, 0, -0.5*spokeSize, spokeSize*sqrt(3), 0.5*spokeSize, spokeSize*sqrt(3));
       popMatrix();
       
-      angle += increment;
+      spokeAngle += increment;
     }
   }
   
   public void moveSpokes(float spokeSpeed) {
-    angle += spokeSpeed;
+    spokeAngle += spokeSpeed;
+    if (spokeAngle >= TWO_PI) {
+        spokeAngle -= TWO_PI;
+    }
   }
 }
