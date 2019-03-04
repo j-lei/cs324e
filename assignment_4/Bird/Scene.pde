@@ -1,3 +1,6 @@
+import processing.sound.*;
+SoundFile file;
+
 Birds bird1;
 Birds bird2;
 
