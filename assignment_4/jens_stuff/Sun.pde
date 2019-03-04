@@ -7,13 +7,13 @@ class Sun {
   public float diameter;
   public color sunColor;
   public color spokeColor;
+  public float spokeSize;
   public int numSpokes;
-  public Spoke[] spokes;
   
   //constructor overloads; all or nothing lol
   public Sun(){
   }
-  public Sun(float beginX, float beginY, float diameter, color sunColor, color spokeColor, int numSpokes) {
+  public Sun(float beginX, float beginY, float diameter, color sunColor, color spokeColor, int spokeSize, int numSpokes) {
     this.currentX = beginX;
     this.currentY = beginY;
     this.beginX = beginX;
@@ -21,13 +21,9 @@ class Sun {
     this.diameter = diameter;
     this.sunColor = sunColor;
     this.spokeColor = spokeColor;
+    this.spokeSize = spokeSize;
     this.numSpokes = numSpokes;
-    this.spokes = new Spoke[numSpokes];
     
-    for(int i=0; i<numSpokes; i++) {
-      Spoke s = new Spoke();
-      this.spokes[i] = s;
-    }
   }
   
   public void display() {
@@ -47,14 +43,24 @@ class Sun {
   }
   
   public void displaySpokes() {
-    float angle = PI;
+    float angle = 0;
+    float scale = (diameter/1.25) + spokeSize;
+    float increment = (2*PI)/numSpokes;
+    
     for (int i=0; i<numSpokes; i++) {
+      
+      float x = currentX + sin(angle) * scale;
+      float y = currentY + cos(angle) * scale;
+      
       pushMatrix();
-      rotate(angle);
-      spokes[i].init(currentX, currentY+(diameter*1.1), diameter/10, spokeColor);
-      spokes[i].display();
+      translate(x, y);
+      rotate(PI-angle);
+      fill(spokeColor);
+      noStroke();
+      triangle(0, 0, -0.5*spokeSize, spokeSize*sqrt(3), 0.5*spokeSize, spokeSize*sqrt(3));
       popMatrix();
-      angle += (2*PI)/numSpokes;
+      
+      angle += increment;
     }
   }
 }
