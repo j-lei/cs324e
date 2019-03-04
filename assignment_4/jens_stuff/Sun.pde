@@ -47,14 +47,16 @@ class Sun {
   }
   
   public void displaySpokes() {
-    float angle = PI;
+    float angle = 0;
+    float scale = diameter * 1.25;
+    float increment = (2*PI)/numSpokes;
+    
     for (int i=0; i<numSpokes; i++) {
       pushMatrix();
-      rotate(angle);
-      spokes[i].init(currentX, currentY+(diameter*1.1), diameter/10, spokeColor);
-      spokes[i].display();
+      float x = currentX + sin(angle) * scale;
+      float y = currentY + scale + cos(angle) * scale;
       popMatrix();
-      angle += (2*PI)/numSpokes;
+      angle += increment;
     }
   }
 }
