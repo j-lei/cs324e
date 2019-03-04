@@ -39,15 +39,13 @@ void setup() {
   //Song is Excursion by Dylan Sitts
   file = new SoundFile(this, "Excursion.mp3");
   file.play();
-  
-
 }
 
 void draw() {
   background(137, 213, 255);
   noStroke();
   fill(#807e78);
-  rect(0,500,800,300);
+  rect(width/2,height/2+250,900,300);
   strokeWeight(4);
   stroke(#ffffff);
   line(0,650,800,650);
