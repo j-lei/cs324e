@@ -27,7 +27,7 @@ void setup() {
   sun = new Sun(width-150, height/2+150, 200, yellow, orange, 30, 10);
   moon = new Sun(width - 200, height/2 + 100, 100, grey, white, 5, 40);
   PShape birdy = loadShape("Birdie.svg");
-  bird1 = new Birds(-100, 300, 75, 75, 5, birdy);
+  bird1 = new Birds(-100, 300, 75, 75, 3, birdy);
   PShape babybirdy = loadShape("Birdie.svg");
   bird2 = new Birds(0, 300, 25, 25, 0.15, babybirdy);
   
