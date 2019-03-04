@@ -67,6 +67,5 @@ class Sun {
   
   public void moveSpokes(float spokeSpeed) {
     angle += spokeSpeed;
-    displaySpokes();
   }
 }
