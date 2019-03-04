@@ -26,9 +26,10 @@ void settings() {
 void setup() {
   sun = new Sun(width-150, height/2+150, 200, yellow, orange, 30, 10);
   moon = new Sun(width - 200, height/2 + 100, 100, grey, white, 5, 40);
-  PShape birdy = loadShape("Birdie.svg");
+  //pinkbird.svg is from https://memegene.net/wallpaper-7988102
+  PShape birdy = loadShape("pinkbird.svg");
   bird1 = new Birds(-100, 300, 75, 75, 3, birdy);
-  PShape babybirdy = loadShape("Birdie.svg");
+  PShape babybirdy = loadShape("pinkbird.svg");
   bird2 = new Birds(0, 300, 25, 25, 0.15, babybirdy);
   
   carframe = new CarFrame(0, height-100, 5, lightblue);
