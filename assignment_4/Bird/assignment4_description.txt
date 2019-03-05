@@ -1,0 +1,9 @@
+Project Description Group 4
+
+The following animation depicts a road with various things moving around the scene. The sun and the moon, made with the Sun class, rise and fall with spokes circling around the objects. At the same time, birds fly across the scene, with their child bird circling around the parent (both objects are the same class, Bird. Also, cars drive down the road, with the frame of the car being a CarFrame object, and its two wheels being two different Wheel objects. All of these objects move at different rates and keep looping while a chill lo-fi beat (Excursion by Dylan Sitts) plays in the background.
+
+Bird Class (Zach): Initially, the bird was planned to be made of two separate classes, a bird body and two bird wing objects made from a wing class. However, it was deemed that the wings would be too hard to animate in 2D, so it was decided to just make two different Bird objects instead.
+
+CarFrame and Wheel Class (Junsung): Car object consists of two classes - the car frame and the wheel class. A car frame and two wheels objects were made, going at a constant speed. I also decided to add small details of a driver with a smiley face on, going back home from a long day of work. The car has two different colored wheels with a rectangular wheel frame. This was done to show the rotation of the wheels as they move. In the beginning phase of the project, I had trouble understanding and implementing translate/rotate - 2D transformations but I was able to successfully implement the wheel class that rotates while moving along the x direction. 
+
+Sun (Jennifer): The sun class creates the sun object with additional spokes around the sun. It was difficult at first to animate the spokes and placing/rotating them around the sun, but I was able to understand them using algebra and geometry. I also implemented the moon object using the Sun Class with minor changes in colors. 
