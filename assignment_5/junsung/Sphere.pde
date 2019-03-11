@@ -15,8 +15,8 @@ class Sphere{
   
   void rotating(){
     spin += direction * 0.02;
-    rotateY(spin);
     rotateX(spin * 0.06);
+    rotateY(spin);
     strokeWeight(1);
     stroke(int(sin(angle) * 255), int(cos(angle) * 255), int(tan(angle) * 255));
     sphereDetail(20);
