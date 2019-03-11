@@ -3,6 +3,7 @@ class Sphere{
   float spin = 0;
   float angle = 0;
   float direction;
+  float distance;
  
   Sphere(float x, float y, float z, float r, float direction){
     this.x = x;
@@ -33,5 +34,47 @@ class Sphere{
     popMatrix();
   }
   
-  
+  void electrons(){
+    pushMatrix();
+      translate(x,y,z);
+      scale(.2);
+      noFill();
+      noStroke();  
+      // Whites 
+      pushMatrix();
+        lights();
+        rotateZ(angle + PI);
+        translate(x + distance/2, 0, 0);
+        fill(255);
+        sphere(r);
+      popMatrix();
+      
+      pushMatrix();
+        lights();
+        rotateX(angle + PI);
+        translate(0, -(y + distance/2), 0);
+        sphere(r);
+      popMatrix();
+      
+      pushMatrix();
+        lights();
+        rotateZ(angle + PI);
+        translate(0, y + distance/2 , 0);
+        fill(255, 0, 0);
+        sphere(r);
+      popMatrix();
+      
+      pushMatrix();
+        lights();
+        rotateY(angle + PI);
+        translate(-(x + distance/2), 0 , 0);
+        fill(255,0, 0);
+        sphere(r);
+      popMatrix();
+     
+    popMatrix();
+    
+  }
+    
 }
+  

@@ -11,5 +11,5 @@ void draw(){
   background(0);
   s.display();
   s1.display();
-  
+  s1.electrons();
 }
