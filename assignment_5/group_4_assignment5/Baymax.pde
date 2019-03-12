@@ -1,3 +1,4 @@
+//obj and materials/textures from https://www.turbosquid.com/3d-models/free-max-mode-baymax-big-hero-6/881191
 class Baymax {
   
   PShape baymax;

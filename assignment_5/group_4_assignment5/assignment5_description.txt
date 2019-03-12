@@ -1,0 +1,47 @@
+Our animation is science-themed. We wanted to create a 'vaporwave'
+aesthetic reminiscent of shows like Bill Nye the Science Guy.
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+CLASSES
+Sphere - Junsung Lee
+  The Sphere class creates a mesh-only sphere that takes in x, y, z
+  coordinates and a radius and spin direction as properties through
+  its constructor. It then makes a rotating sphere that slowly changes
+  color in accordance to its current angle. 
+
+  The Sphere also has the option to display red and white electrons
+  that circle around it on its x, y, and z axes.
+
+HeliumAtom - Zachary Martinez
+  The HeliumAtom class creates a model of a Helium atom with 2 neutrons,
+  2 electrons, and 2 protons. It takes a property for radius through
+  its constructor, and makes the model with the electrons orbiting the
+  atomic nucleus.
+
+Baymax - Jennifer Lei
+  The Baymax class creates a model of Baymax from Big Hero 6, with a 
+  stack of robotic cubes orbiting it. It takes in parameters for scale,
+  position, angle, and color through its constructor. It then loads in
+  the obj and texture.
+  
+  Baymax spins in one direction, while the cubes orbit him and rotate 
+  as well. The cubes change color according to his current angle, with
+  each stack containing 2 cubes with opposing colors.
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+DIFFICULTIES
+Our team's biggest difficulty was properly using textures with objs.
+We had initially tried a different obj set with a different texture,
+but that one failed to load correctly at all. The current obj texture
+does load, but we weren't able to figure out how to get the eyes to
+only show up once on the figure. 
+
+We tried all different combinations of textureMode() and textureWrap(), and also tried resizing/changing the texture file, but nothing worked, so now Baymax has like eyes everywhere, which is actually kind of
+disturbing.
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+CREDITS
+The Baymax obj, plus textures and materials, was found at: https://www.turbosquid.com/3d-models/free-max-mode-baymax-big-hero-6/881191
