@@ -102,6 +102,7 @@ class Baymax {
     box(cubeSize);
     popMatrix();
     
+    colorMode(RGB, 255, 255, 255, 100);
   }
   
   public void spin(float amount) {
