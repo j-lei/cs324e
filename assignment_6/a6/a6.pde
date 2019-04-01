@@ -17,13 +17,19 @@ void setup() {
     Cell[] row = new Cell[width/10];
     for (int j = 0; j < width/10; j++) {
       Cell c = new Cell(i, j);
-      print("(" + i + "," + j + ")" + " ");
+      if (i >= 70 && i <= 85) {
+        c.isFilled =  true;
+      }
       row[j] = c;
     }
     grid[i] = row;
     print();
   }
-  frameRate(1);
+  frameRate(2);
+  
+  fill(100,150,255);
+  noStroke();
+  rect(700, 0, 150, height);
 }
 
 void draw() {

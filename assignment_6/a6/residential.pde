@@ -7,7 +7,8 @@ class Residential extends Unit {
       return false; 
     }
     fill(255,0,0);
-    circle(xIndex*10, yIndex*10, 5);
+    noStroke();
+    square(xIndex*10, yIndex*10, 5);
     return true;
   }
   
@@ -19,11 +20,11 @@ class Residential extends Unit {
         int y = yIndex+i;
         x = constrain(x, 0, grid.length-1);
         y = constrain(y, 0, grid[xIndex].length-1);
-        if (grid[y][x].isIndustrial) {
+        if (grid[x][y].isIndustrial) {
           return 0;        // no residential and industrial units can exist next to each other
         }
-        if (grid[y][x].isResidential) {
-          prob += 0.2;
+        if (grid[x][y].isResidential) {
+          prob += 0.1;
         }
       }
     }
