@@ -5,22 +5,21 @@ class Cell {
   Boolean isResidential;
   Boolean isCommercial;
   Boolean isIndustrial;
-  int xPos;
-  int yPos;
-  Cell[][] neighbors;
+  int xIndex;
+  int yIndex;
   
-  public Cell(int xPos, int yPos) {
-    this.xPos = xPos;
-    this.yPos = yPos;
+  public Cell(int xIndex, int yIndex) {
+    this.xIndex = xIndex;
+    this.yIndex = yIndex;
     isFilled = false;
     isResidential = false;
     isCommercial = false;
     isIndustrial = false;
   }
   
-  public void iterate(float baseRProb, float baseCProb, float baseIprob) {
+  public void iterate(float baseRProb, float baseCProb, float baseIProb, Cell[][] grid) {
     Residential r = new Residential();
-    if (r.spawn(baseRProb, neighbors, xPos, yPos)) {
+    if (r.spawn(baseRProb, xIndex, yIndex, grid)) {
       unit = r;
       isFilled = true;
       isResidential = true;
