@@ -2,6 +2,7 @@ class Cell {
   
   Unit unit;
   Boolean isFilled;
+  Boolean isWater;
   Boolean isResidential;
   Boolean isCommercial;
   Boolean isIndustrial;
@@ -15,6 +16,7 @@ class Cell {
     isResidential = false;
     isCommercial = false;
     isIndustrial = false;
+    isWater = false;
   }
   
   public void iterate(float baseRProb, float baseCProb, float baseIProb, Cell[][] grid) {

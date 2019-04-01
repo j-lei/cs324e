@@ -7,7 +7,7 @@ float baseIndustrial = 0.02;
 
 void setup() {
   size(1000, 1000);
-  background(255);
+  background(200, 255, 170);
   int rowSize = width/10;
   int columnSize = height/10;
   grid = new Cell[rowSize][columnSize];
@@ -19,6 +19,7 @@ void setup() {
       Cell c = new Cell(i, j);
       if (i >= 70 && i <= 85) {
         c.isFilled =  true;
+        c.isWater = true;
       }
       row[j] = c;
     }
