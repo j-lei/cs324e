@@ -1,6 +1,6 @@
 class Residential extends Unit {
   
-  public Boolean spawn(float baseRProb, int xIndex, int yIndex, Cell[][] grid){ 
+  public Boolean spawn(float baseRProb, int xIndex, int yIndex, Cell[][] grid, PShape rUnit){ 
     float probSpawn = calculateProbability(baseRProb, xIndex, yIndex, grid);
     float roll = random(1);
     if (roll > probSpawn) {
@@ -8,9 +8,7 @@ class Residential extends Unit {
     }
     float xPos = xIndex * 15.0;
     float yPos = yIndex * 15.0;
-    fill(255,0,0);
-    noStroke();
-    square(xPos, yPos, 5);
+    shape(rUnit, xPos, yPos, 15, 15);
     return true;
   }
   
