@@ -2,6 +2,7 @@ class Cell {
   
   Unit unit;
   Unit unitC;
+  Unit unitI;
   Boolean isFilled;
   Boolean isWater;
   Boolean isResidential;
@@ -37,6 +38,13 @@ class Cell {
       unit = c;
       isFilled = true;
       isCommercial = true;
+      return;
+    }
+    Industrial f = new Industrial();
+    if (f.spawn(baseIProb, xIndex, yIndex, grid)) {
+      unit = f;
+      isFilled = true;
+      isIndustrial = true;
       return;
     }
   }
