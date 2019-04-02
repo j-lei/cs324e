@@ -1,5 +1,7 @@
 class Commercial extends Unit {
   
+  PShape comm;
+  
   public Boolean spawn(float baseCProb, int xIndex, int yIndex, Cell[][] grid){ 
     float probSpawn = calculateProbability(baseCProb, xIndex, yIndex, grid);
     float roll = random(1);
@@ -8,9 +10,11 @@ class Commercial extends Unit {
     }
     float xPos = xIndex * 10.0;
     float yPos = yIndex * 10.0;
-    fill(0,0,255);
     noStroke();
-    square(xPos, yPos, 5);
+    //square(xPos, yPos, 5);
+    PShape comm = loadShape("commercial.svg");
+    //Icons made by SimpleIcon from "https://www.flaticon.com/"   Flaticon is licensed by "http://creativecommons.org/licenses/by/3.0/"
+    shape(comm, xPos, yPos, 15, 15);
     return true;
   }
 
@@ -22,14 +26,13 @@ class Commercial extends Unit {
         int y = yIndex+i;
         x = constrain(x, 0, grid.length-1);
         y = constrain(y, 0, grid[xIndex].length-1);
-        if (grid[x][y].isCommercial) {
-          return 0;        //No Commercial units can exist next to each other
-        }
-        else if (grid[x][y].isResidential) {
-          return prob;
+        if (grid[x][y].isResidential) {
+          if (grid[x][y].isCommercial == false) {
+            return prob;        //No Commercial units can exist next to each other
         }
       }
     }
-    return 0;
+  }
+  return 0;
   }
 }
