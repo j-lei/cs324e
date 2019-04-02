@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 Cell[][] grid;
 float baseResidential = 0.00005;
-float baseCommercial = 0.07;
+float baseCommercial = 0.007;
 float baseIndustrial = 0.02;
 
 void setup() {
