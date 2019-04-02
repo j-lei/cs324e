@@ -1,24 +1,22 @@
-import java.util.Arrays;
-
 Cell[][] grid;
 float baseResidential = 0.00005;
 float baseCommercial = 0.007;
 float baseIndustrial = 0.02;
 
 void setup() {
-  size(1000, 1000);
+  size(1500, 1500);
   background(200, 255, 170);
-  int rowSize = width/10;
-  int columnSize = height/10;
-  grid = new Cell[rowSize][columnSize];
-  //make grid
-  //each cell is 10x10, so grid is 150 x 150
-  for (int i = 0; i < height/10; i++) {
-    Cell[] row = new Cell[width/10];
-    for (int j = 0; j < width/10; j++) {
+  
+  int rowNum = width/15;
+  int columnNum = height/15;
+  grid = new Cell[rowNum][columnNum];
+  //each cell is 15x15, so grid is 100 x 100
+  for (int i = 0; i < rowNum; i++) {
+    Cell[] row = new Cell[columnNum];
+    for (int j = 0; j < columnNum; j++) {
       Cell c = new Cell(i, j);
       if (i >= 70 && i <= 85) {
-        c.isFilled =  true;
+        c.isFilled = true;
         c.isWater = true;
       }
       row[j] = c;

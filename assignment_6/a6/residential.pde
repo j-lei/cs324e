@@ -6,8 +6,8 @@ class Residential extends Unit {
     if (roll > probSpawn) {
       return false; 
     }
-    float xPos = xIndex * 10.0;
-    float yPos = yIndex * 10.0;
+    float xPos = xIndex * 15.0;
+    float yPos = yIndex * 15.0;
     fill(255,0,0);
     noStroke();
     square(xPos, yPos, 5);
@@ -22,14 +22,18 @@ class Residential extends Unit {
         int y = yIndex+i;
         x = constrain(x, 0, grid.length-1);
         y = constrain(y, 0, grid[xIndex].length-1);
+        
+        // no residential and industrial units can exist next to each other
         if (grid[x][y].isIndustrial) {
-          return 0;        // no residential and industrial units can exist next to each other
+          return 0;        
         }
+        // residential units are more likely to spawn near each other; this effect decreases w/ distance
         if (grid[x][y].isResidential) {
-          prob += (0.1 - 0.02*(abs(i) + abs(j)))*random(1);
+          prob += (0.1 - 0.02*(abs(i) + abs(j)))*random(1);      
         }
+        // residential units are slighhhtly more likely to spawn near water
         if (grid[x][y].isWater) {
-          prob += 0.002 * random(1);
+          prob += 0.002 * random(1);    
         }
       }
     }

@@ -8,8 +8,8 @@ class Commercial extends Unit {
     if (roll > probSpawn) {
       return false; 
     }
-    float xPos = xIndex * 10.0;
-    float yPos = yIndex * 10.0;
+    float xPos = xIndex * 15.0;
+    float yPos = yIndex * 15.0;
     noStroke();
     //square(xPos, yPos, 5);
     PShape comm = loadShape("commercial.svg");
