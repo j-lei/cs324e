@@ -20,13 +20,13 @@ class Cell {
     isWater = false;
   }
   
-  public void iterate(float baseRProb, float baseCProb, float baseIProb, Cell[][] grid) {
+  public void iterate(float baseRProb, float baseCProb, float baseIProb, Cell[][] grid, PShape rUnit) {
     if (isFilled) {
       return;    //don't do anything
     }
     
     Residential r = new Residential();
-    if (r.spawn(baseRProb, xIndex, yIndex, grid)) {
+    if (r.spawn(baseRProb, xIndex, yIndex, grid, rUnit)) {
       unit = r;
       isFilled = true;
       isResidential = true;
