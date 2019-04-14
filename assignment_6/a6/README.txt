@@ -1,1 +1,0 @@
-How to run animation: open file group_4_assignment6.pde and select run. Also included in the zip file is a GIF of a run of our simulation to fulfill the Animation Artifact extra credit.

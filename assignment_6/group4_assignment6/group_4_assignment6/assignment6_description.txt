@@ -1,0 +1,29 @@
+Our idea for assignment 6 is a cellular automata type simulation that simulates a city being developed.
+
+
+
+Classes
+Industrial - Junsung Lee
+	The Industrial class of the Unit superclass will have units spawned at random locations on the map near bodies of water. They will spawn at a slower rate compared to residential and commercial units. In order to keep the right balance between the industrial and the rest, the number of industrial units will be far less than the number of residential and commercial units. These units also can't spawn next to residential units. 
+
+Commercial - Zachary Martinez
+	The Commercial class of the Unit superclass will have units spawned at random locations on the map that must be near residential units, and cannot spawn next to another commercial unit.
+
+Residential - Jennifer Lei
+	The Residential class of the Unit superclass will have units spawned at random locations on the map, with higher probabilities of spawning within a certain distance of an industrial unit. They will have the highest probability of being spawned on the map. They also can't spawn directly next to an industrial unit.
+
+Cell - Jennifer Lei
+	The Cell class objects are inside the 2D array grid. Each cell has the properties isFilled, which describes if a cell has a unit on that place in the grid, isCommercial which is true if the unit is a commercial unit, isResidential which is true if the unit is a residential unit and isIndustrial which is true if the unit is an industrial unit. Any time another unit tries to spawn, it will check the Cell at that location on the grid for its properties to determine if it can spawn there. If a unit spawns at that location, the cell will update its properties to reflect the presence of that unit.
+
+Assignment6.gif - Zachary Martinez
+	This GIF is an example run of our simulation
+
+
+
+Difficulties
+	Most of our difficulties came from trying to create the simulation on a grid and trying to imagine how it would work. However, we eventually were able to make it work. 
+
+
+
+Credits
+	All of our SVG icons are from "flaticon.com". The individual links are found within the source code. 
