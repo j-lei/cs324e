@@ -1,4 +1,8 @@
 class Coin{
+  
+  public Coin(){
+    
+  }
 
 
 }
