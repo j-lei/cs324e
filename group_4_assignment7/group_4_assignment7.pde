@@ -1,19 +1,18 @@
 Grid grid;
+//Grid grid = new Grid(10, 10);
 
 
 void setup(){
   size(500, 500);
-  
   Grid grid = new Grid(10, 10);
-  grid.spawn();
-  
 }
 
 void draw(){
-  //for (Grid[] row : grid){
-  //  for (Grid g : row){
-  //    g.iterate();
-  //  }
-  //}
+  //Grid grid = new Grid(10, 10);
+  //grid.spawn();
+  //noLoop();
 
 }
+
+//void timer() {
+//  if (millis() % 1000
