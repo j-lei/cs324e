@@ -18,7 +18,7 @@ class Pac
     ellipse (this.x, this.y, size, size);
   }
 
-  boolean checkCollision ()
+  boolean collision ()
   {
     if (  sqrt(  (this.x - posX) * (this.x - posX) + (this.y - posY) * (this.y - posY)  ) < 50)
     {

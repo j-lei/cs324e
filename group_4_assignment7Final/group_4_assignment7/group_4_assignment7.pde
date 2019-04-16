@@ -58,18 +58,18 @@ void draw()
 
   for (int i = 0; i < dotGenerate.length; i += 1)
   {
-    dotGenerate[i].checkCollision();
+    dotGenerate[i].collision();
     dotGenerate[i].draw();
   }
   for (int i = 0; i < enemyGenerate.length; i += 1){
     enemyGenerate[i].draw();
     enemyGenerate[i].move();
-    enemyGenerate[i].checkCollision();
+    enemyGenerate[i].collision();
   }
   
   for (int i = 0; i < obstacleGenerate.length; i += 1){
     obstacleGenerate[i].draw();
-    obstacleGenerate[i].checkCollision();
+    obstacleGenerate[i].collision();
   }
   // Displays the score
   fill(0);
