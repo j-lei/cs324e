@@ -14,14 +14,31 @@ class Enemy extends Pac{
   }
   
   void move(){
-    this.x += 5;
+    this.x += 2.5;
     if (this.x > width + 200){
       this.x = -50;
     }
-    this.y += 5;
+    this.y += 2.5;
     if (this.y > height + 100){
       this.y = 0;
     }
+  }
+    boolean checkCollision ()
+  {
+    if (  sqrt(  (this.x - posX) * (this.x - posX) + (this.y - posY) * (this.y - posY)  ) < 50)
+    {
+      this.x = random (25, width - 25);
+      this.y = random (25, height - 25);
+      background(0);
+      textAlign(CENTER);
+      textSize(50);
+      fill(255,0,0);
+      text("You LOSE! \n To restart, press the m key!", width/2, height/2);
+      noLoop();
+      return true;
+    }
+
+    return false;
   }
   
 }

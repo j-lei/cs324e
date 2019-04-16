@@ -60,10 +60,12 @@ void draw()
   for (int i = 0; i < enemyGenerate.length; i += 1){
     enemyGenerate[i].draw();
     enemyGenerate[i].move();
+    enemyGenerate[i].checkCollision();
   }
   
   for (int i = 0; i < obstacleGenerate.length; i += 1){
     obstacleGenerate[i].draw();
+    obstacleGenerate[i].checkCollision();
   }
   // Displays the score
   fill(0);
@@ -75,30 +77,49 @@ void draw()
     background(255);
     textAlign(CENTER);
     textSize(50);
-    text("You Win! \n To restart, press the m key!", width/2, height/2);
+    fill(250, 255, 10);
+    text("You WIN! \n To restart, press 'm'!", width/2, height/2);
     noLoop();
   }
+  saveFrame();
 }
 
 void keyPressed() {
      if (key == 'd')
     {
-      posX = posX + 10;
+      if (posX <= 700) {
+         posX = posX + 10;
+      }
     }
     if (key == 'a')
     {
-      posX = posX - 10;
+      if (posX >= 0) {
+         posX = posX - 10;
+      }
     }
     if (key == 'w')
     {
-      posY = posY - 10;
+      if (posY >= 0) {
+         posY = posY - 10;
+      }
     }
     if (key == 's')
     {
-      posY = posY + 10;
+      if (posY <= 700) {
+         posY = posY + 10;
+      }
     }
     if (key == 'm') {
       score = 0;
+      loop();
+    }
+    if (key == 'p') {
+      textAlign(CENTER);
+      textSize(50);
+      text("Game Paused \n Press 'r' to resume", width/2, height/2);
+      noLoop();
+    }
+    if (key == 'r') {
       loop();
     }
 }

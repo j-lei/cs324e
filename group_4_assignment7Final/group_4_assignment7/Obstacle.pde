@@ -13,4 +13,19 @@ class Obstacle extends Pac{
     fill(0);
     rect(this.x, this.y, size, size); 
   }
+  boolean checkCollision ()
+  {
+    if (  sqrt(  (this.x - posX) * (this.x - posX) + (this.y - posY) * (this.y - posY)  ) < 50)
+    {
+      this.x = random (25, width - 25);
+      this.y = random (25, height - 25);
+      if (score > 0) {
+        score -= 1;
+      }
+      println(score);
+      return true;
+    }
+
+    return false;
+  }
 }
