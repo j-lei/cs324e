@@ -1,0 +1,20 @@
+Our idea for assignment 7 is a modified version of pacman using processing. The overall game objective is to collect the green coins that are randomly spawned in the map. The player can control the main 'pacman' in order to collect the coins while avoiding obstacles and enemies. 
+The main 'pacman' is a yellow rectangle, enemies are red rectangles that fly from upper right corner to the bottom right corner, obstacles are black rectangles that are randomly spawned, and the coins are green circles that are randomly spawned throughout the gameplay.  
+
+Rules of Play:
+	i) If the player runs into an obstacle, the coin score decreases by 1.
+	ii) If the player collects a green coin, the coin score increases by 1.
+	iii) If the player run into an enemy, the player instantly loses the game.
+
+Win/Lose Conditions:
+	Win: Collect 10 coins in the game
+	Lose: Gets eaten by an enemy 
+
+Classes:
+	i) Pac (Zachary Martinez): Main class that randomly spawns the coins. It has checkCollision that checks if the coin collides with the player. If checkCollision is true, the score increments by 1.
+	ii) Enemy (Junsung Lee): Subclass that randomly spawns the enemies. It has move function that allows them to move freely from the upper right corner to the bottom right corner. 
+	iii) Obstacle (Jennifer Lei): Subclass that spawns the obstacles at random locations. It also has checkCollision that checks if the coin collides with the player. If checkCollision is true, the score decreases by 1.
+
+Unexpected Challenges: We had to tweak things around from what we originally planned in order to have more efficient/fun game. We decided to move away from Grid and have an open space that includes the objects that were mentioned above. Finally, for the objects we decided to keep them primitives with colors instead of the animated sprites.
+
+We all worked on classes separately, but for the group_4_assignment7 implementation, we all met up to discuss and finalize the assignment.
