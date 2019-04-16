@@ -1,9 +1,8 @@
-// pacman variables
+//player variables
 float posX = 0;
 float posY = 0;
-//float direction = 0;
 
-// dot variables
+//coin variables
 Pac[] dotGenerate;
 
 // enemy variables
@@ -12,6 +11,7 @@ Enemy[] enemyGenerate;
 // obstacle variables
 Obstacle[] obstacleGenerate;
 
+//score counter
 int score = 0;
 
 void setup()
@@ -25,6 +25,7 @@ void setup()
   size (750, 750);
   background (255);
 
+//creates 5 coins
   dotGenerate = new Pac[5];
 
   for (int i = 0; i < dotGenerate.length; i += 1)
@@ -32,12 +33,14 @@ void setup()
     dotGenerate[i] = new Pac();
   }
   
+//creates 10 enemies
   enemyGenerate = new Enemy[10];
   
   for (int i = 0; i < enemyGenerate.length; i += 1){
     enemyGenerate[i] = new Enemy();
   }
   
+//creates 10 obstacles
   obstacleGenerate = new Obstacle[10];
   
   for (int i = 0; i < obstacleGenerate.length; i += 1){
@@ -50,6 +53,7 @@ void draw()
   background(255);
 
   fill (250, 255, 10);
+  //creates the player
   rect(posX, posY, 50, 50);
 
   for (int i = 0; i < dotGenerate.length; i += 1)
@@ -81,7 +85,6 @@ void draw()
     text("You WIN! \n To restart, press 'm'!", width/2, height/2);
     noLoop();
   }
-  saveFrame();
 }
 
 void keyPressed() {
@@ -116,10 +119,13 @@ void keyPressed() {
     if (key == 'p') {
       textAlign(CENTER);
       textSize(50);
-      text("Game Paused \n Press 'r' to resume", width/2, height/2);
+      text("Game Paused \n Press 'r' to resume \n Press 'q' to quit", width/2, height/2);
       noLoop();
     }
     if (key == 'r') {
       loop();
+    }
+    if (key == 'q') {
+      exit();
     }
 }
