@@ -4,9 +4,9 @@ float posY = 0;
 //float direction = 0;
 
 // dot variables
-Dot[] dotGenerate;
+Pac[] dotGenerate;
 
-Dot dot1;
+Enemy[] enemyGenerate;
 
 int score = 0;
 
@@ -21,13 +21,17 @@ void setup()
   size (750, 750);
   background (0);
 
-  dot1 = new Dot ();
 
-  dotGenerate = new Dot[5];
+  dotGenerate = new Pac[5];
 
-  for (int i = 0; i < dotGenerate.length; i = i + 1)
+  for (int i = 0; i < dotGenerate.length; i += 1)
   {
-    dotGenerate[i] = new Dot();
+    dotGenerate[i] = new Pac();
+  }
+  
+  enemyGenerate = new Enemy[10];
+  for (int i = 0; i < enemyGenerate.length; i += 1){
+    enemyGenerate[i] = new Enemy();
   }
 }
 
@@ -38,10 +42,14 @@ void draw()
   fill (250, 255, 10);
   rect(posX, posY, 50, 50);
 
-  for (int i = 0; i < dotGenerate.length; i = i + 1)
+  for (int i = 0; i < dotGenerate.length; i += 1)
   {
     dotGenerate[i].checkCollision();
     dotGenerate[i].draw();
+  }
+  for (int i = 0; i < enemyGenerate.length; i += 1){
+    enemyGenerate[i].draw();
+    enemyGenerate[i].move();
   }
   // Displays the score
   textAlign(RIGHT);

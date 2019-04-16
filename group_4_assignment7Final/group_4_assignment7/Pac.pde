@@ -1,10 +1,10 @@
-class Dot 
+class Pac 
 {
   float x, y, size;
   color c;
 
   // coins 
-  Dot ()
+  public Pac ()
   {
     this.x = random (25, width - 25);
     this.y = random (25, height - 25);
@@ -12,19 +12,9 @@ class Dot
     this.c = (255);
   }
 
-  // enemy
-  Dot ( float x, float y)
-  {
-    this.x = x;
-    this.y = y;
-    this.size = 25;
-    this.c = color(255, 0, 0);
-  }
-
-
   void draw ()
   {
-    fill (255);
+    fill (c);
     ellipse (this.x, this.y, size, size);
   }
 
