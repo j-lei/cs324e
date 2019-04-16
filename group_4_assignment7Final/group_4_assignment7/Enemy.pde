@@ -6,10 +6,10 @@ class Enemy extends Pac{
     this.x = random (25, width - 25);
     this.y = random (25, height - 25);
     this.size = 25;
-    this.c = color(255, 0, 0);
+    this.c = 255;
   }
   void draw (){
-    fill (c);
+    fill (c, 0, 0);
     rect (this.x, this.y, size, size);
   }
   

@@ -6,7 +6,11 @@ float posY = 0;
 // dot variables
 Pac[] dotGenerate;
 
+// enemy variables
 Enemy[] enemyGenerate;
+
+// obstacle variables
+Obstacle[] obstacleGenerate;
 
 int score = 0;
 
@@ -19,8 +23,7 @@ void setup()
   ellipseMode (RADIUS);
 
   size (750, 750);
-  background (0);
-
+  background (255);
 
   dotGenerate = new Pac[5];
 
@@ -30,14 +33,21 @@ void setup()
   }
   
   enemyGenerate = new Enemy[10];
+  
   for (int i = 0; i < enemyGenerate.length; i += 1){
     enemyGenerate[i] = new Enemy();
+  }
+  
+  obstacleGenerate = new Obstacle[10];
+  
+  for (int i = 0; i < obstacleGenerate.length; i += 1){
+    obstacleGenerate[i] = new Obstacle();
   }
 }
 
 void draw()
 {
-  background(0);
+  background(255);
 
   fill (250, 255, 10);
   rect(posX, posY, 50, 50);
@@ -51,13 +61,18 @@ void draw()
     enemyGenerate[i].draw();
     enemyGenerate[i].move();
   }
+  
+  for (int i = 0; i < obstacleGenerate.length; i += 1){
+    obstacleGenerate[i].draw();
+  }
   // Displays the score
+  fill(0);
   textAlign(RIGHT);
   textSize(50);
   text(score, width - 50, 70);
   
   if (score >= 10) {
-    background(0);
+    background(255);
     textAlign(CENTER);
     textSize(50);
     text("You Win! \n To restart, press the m key!", width/2, height/2);

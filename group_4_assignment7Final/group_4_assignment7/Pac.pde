@@ -8,13 +8,13 @@ class Pac
   {
     this.x = random (25, width - 25);
     this.y = random (25, height - 25);
-    this.size = 12;
+    this.size = 8;
     this.c = (255);
   }
 
   void draw ()
   {
-    fill (c);
+    fill (0, c, 0);
     ellipse (this.x, this.y, size, size);
   }
 
@@ -24,7 +24,7 @@ class Pac
     {
       this.x = random (25, width - 25);
       this.y = random (25, height - 25);
-      score += 5;
+      score += 1;
       println(score);
       return true;
     }
